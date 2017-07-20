@@ -1,13 +1,19 @@
 package testFile;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 
 /**
  * Created by dima on 19.07.2017.
  */
 public class Main {
+
     public static void main(String[] args) throws Exception {
-        File file = new File("C:/dima");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String path = bufferedReader.readLine();
+        File file = new File(path);
         recurs(file, 0);
     }
 
