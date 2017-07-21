@@ -9,12 +9,14 @@ import java.io.InputStreamReader;
  */
 public class Main {
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args ) throws Exception {
+        if (args.length>0){
+            String path = args[0];
+            File file = new File(path);
+            recurs(file, 0);
+        }else System.out.println("введите аргумент");
 
-        String path = bufferedReader.readLine();
-        File file = new File(path);
-        recurs(file, 0);
+
     }
 
     public static void recurs(File file, int i) {

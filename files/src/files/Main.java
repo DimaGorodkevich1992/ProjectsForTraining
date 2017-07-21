@@ -10,27 +10,27 @@ import java.util.Queue;
  */
 public class Main {
     public static void main(String[] args) {
-        File file = new File("C:/Test");
+        File file = new File("C:/Intel");
 
-        recursionFiles(file, 0);
+        noRecurs(file);
 
     }
 
-    public static void recursionFiles(File file, int i) {
-        System.out.println(getSpace(i++) + file.getName());
-        for (File entry : file.listFiles())  {
-
-            recursionFiles(entry, i);
-        }
-    }
-
-    public static String getSpace(int length) {
-        String result = "";
-        for (int index = 0; index < length; index++) {
-            result += "\t";
-        }
-        return result;
-    }
+//    public static void recursionFiles(File file, int i) {
+//        System.out.println(getSpace(i++) + file.getName());
+//        for (File entry : file.listFiles())  {
+//
+//            recursionFiles(entry, i);
+//        }
+//    }
+//
+//    public static String getSpace(int length) {
+//        String result = "";
+//        for (int index = 0; index < length; index++) {
+//            result += "\t";
+//        }
+//        return result;
+//    }
 
     public static void noRecurs(File file) {
         Queue<File> queue = new PriorityQueue<File>();
