@@ -21,8 +21,8 @@ public class MyList<E> implements ListMethods<E> {
 
     @Override
     public void pushElem(E element) {
-        Node<E> newNode = firstNode;
-        newNode.setCurrent(element);
+        Node<E> newNode = firstNode;                                    //добавление елемента в
+        newNode.setCurrent(element);                                    //начало списка
         firstNode = new Node<>(null, newNode, null);
         newNode.setPrevios(firstNode);
         size++;
@@ -88,10 +88,11 @@ public class MyList<E> implements ListMethods<E> {
             }
 
         }
-        System.out.println("current Element " + neededNode.getCurrent());
+        System.out.println("current Element " + neededNode.getCurrent());  //Вывод нужного узла
         System.out.println("previos Element " + neededNode.getPrevios().getCurrent());
-        System.out.println("next Element " +  neededNode.getNext());
+        System.out.println("next Element " + neededNode.getNext());
     }
+
     public class Node<E> {
         private E current;
         private Node<E> next;
@@ -127,7 +128,4 @@ public class MyList<E> implements ListMethods<E> {
             this.previos = previos;
         }
     }
-
-
 }
-
