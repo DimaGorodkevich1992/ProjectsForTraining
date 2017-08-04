@@ -1,7 +1,4 @@
 package List;
-
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 /**
  * Created by dima on 01.08.2017.
  */
@@ -18,6 +15,19 @@ public class MyList<E> implements ListMethods<E> {
         firstNode = new Node<>(null, null, null);
     }
 
+    final Node<E> iter(int number) {
+        Node<E> neededNode = null;
+        Node<E> newNode = firstNode;
+        if (number > size) {                                 //проверка на существоания такого
+            System.out.println("Такого элемента нет");           //элемента в списке
+        } else {
+            for (int index = 0; index < number; index++) {   //Поиска нужного узла
+                neededNode = newNode.getNext();
+                newNode = neededNode;
+            }
+        }
+        return neededNode;
+    }
 
     @Override
     public void pushElem(E element) {
@@ -26,68 +36,31 @@ public class MyList<E> implements ListMethods<E> {
         firstNode = new Node<>(null, newNode, null);
         newNode.setPrevios(firstNode);
         size++;
-
     }
 
     @Override
     public void removeElem(int numberElem) {
-        Node<E> neededNode = null;
-        Node<E> newNode = firstNode;
-        if (numberElem > size) {                                 //проверка на существоания такого
-            System.out.println("Такого элемента нет");           //элемента в списке
+        Node<E> neededNode = iter(numberElem);
+        Node<E> prevElem = neededNode.getPrevios();          //  переопределение и проверка
+        Node<E> nextElem = neededNode.getNext();             //  на последний узел
+        if (neededNode.getNext() != null) {
+            prevElem.setNext(neededNode.getNext());
+            nextElem.setPrevios(neededNode.getPrevios());
         } else {
-            for (int index = 0; index < numberElem; index++) {   //Поиска нужного узла
-                neededNode = newNode.getNext();
-                newNode = neededNode;
-
-            }
-            Node<E> prevElem = neededNode.getPrevios();          //  переопределение и проверка
-            Node<E> nextElem = neededNode.getNext();             //  на последний узел
-            if (neededNode.getNext() != null) {
-                prevElem.setNext(neededNode.getNext());
-                nextElem.setPrevios(neededNode.getPrevios());
-            } else {
-                prevElem.setNext(null);
-            }
-
-           /* neededNode.setCurrent(null);
-            neededNode.setPrevios(null);
-            neededNode.setNext(null);*/
-            size--;
+            prevElem.setNext(null);
         }
-
-
+        size--;
     }
 
     @Override
     public void setElem(int numberElem, E element) {
-        Node<E> neededNode = null;
-        Node<E> newNode = firstNode;
-        if (numberElem > size) {                                 //проверка на существоания такого
-            System.out.println("Такого элемента нет");           //элемента в списке
-        } else {
-            for (int index = 0; index < numberElem; index++) {   //Поиска нужного узла
-                neededNode = newNode.getNext();
-                newNode = neededNode;
-            }
-            neededNode.setCurrent(element);                      //переопределение значения нужного узла
-        }
-
+        Node<E> neededNode = iter(numberElem);
+        neededNode.setCurrent(element);                      //переопределение значения нужного узла
     }
 
     @Override
     public void getElem(int numberElem) {
-        Node<E> neededNode = null;
-        Node<E> newNode = firstNode;
-        if (numberElem > size) {                                 //проверка на существоания такого
-            System.out.println("Такого элемента нет");           //элемента в списке
-        } else {
-            for (int index = 0; index < numberElem; index++) {   //Поиска нужного узла
-                neededNode = newNode.getNext();
-                newNode = neededNode;
-            }
-
-        }
+        Node<E> neededNode = iter(numberElem);
         System.out.println("current Element " + neededNode.getCurrent());  //Вывод нужного узла
         System.out.println("previos Element " + neededNode.getPrevios().getCurrent());
         System.out.println("next Element " + neededNode.getNext());

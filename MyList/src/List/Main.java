@@ -14,7 +14,6 @@ public class Main {
         myListStrings.removeElem(2);
         System.out.println(myListStrings.getSize());
         myListStrings.setElem(2, "Dimasik");
-        Object node = new Object();
         myListStrings.getElem(2);
 
 
