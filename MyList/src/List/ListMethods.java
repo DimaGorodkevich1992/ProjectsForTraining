@@ -10,5 +10,5 @@ public interface ListMethods<E> {
 
     void setElem(int numberElem , E element);
 
-    void getElem(int numberElem);
+    Object getElem(int numberElem);
 }

@@ -11,10 +11,11 @@ public class Main {
         myListStrings.pushElem("Dima");
         myListStrings.pushElem("Tanya");
         myListStrings.pushElem("Usia");
-        myListStrings.removeElem(2);
-        System.out.println(myListStrings.getSize());
-        myListStrings.setElem(2, "Dimasik");
         myListStrings.getElem(2);
+        myListStrings.setElem(1,"Pepka");
+        myListStrings.removeElem(3);
+
+
 
 
     }
