@@ -15,8 +15,8 @@ public class StringReverse {
             str.append(string.charAt(i));
 
         }
-        String result = str.toString();
-        return result;
+
+        return str.toString();
     }
 
     public static String reversStringArr(String string) {
