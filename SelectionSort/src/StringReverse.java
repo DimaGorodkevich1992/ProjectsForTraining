@@ -11,9 +11,8 @@ public class StringReverse {
     public static String reversString(String string) {
 
         StringBuffer str = new StringBuffer();
-        for (int i = 0; i < string.length(); i++) {
-            str.insert(0, string.charAt(i));
-
+        for (int i = string.length() - 1; i >= 0; i--) {
+            str.append(string.charAt(i));
 
         }
         String result = str.toString();
