@@ -5,14 +5,17 @@ public class StringReverse {
     public static void main(String[] args) {
         System.out.println(upLetter("qWe"));
         System.out.println(downLetter("FdwDwd"));
+        System.out.println(reversString("wewq"));
     }
 
-    public static void reversString(String string) {
+    public static String reversString(String string) {
         String result = "";
         for (int i = 0; i < string.length(); i++) {
-            result = string.charAt(i) + result;
+            String tmp = Character.toString(string.charAt(i));
+            result = tmp.concat(result);
+
         }
-        System.out.println(result);
+        return result;
     }
 
     public static String reversStringArr(String string) {
