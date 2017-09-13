@@ -9,12 +9,14 @@ public class StringReverse {
     }
 
     public static String reversString(String string) {
-        String result = "";
+
+        StringBuffer str = new StringBuffer();
         for (int i = 0; i < string.length(); i++) {
-            String tmp = Character.toString(string.charAt(i));
-            result = tmp.concat(result);
+            str.insert(0, string.charAt(i));
+
 
         }
+        String result = str.toString();
         return result;
     }
 
