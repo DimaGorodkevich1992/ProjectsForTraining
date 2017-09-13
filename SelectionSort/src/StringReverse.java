@@ -3,7 +3,8 @@
  */
 public class StringReverse {
     public static void main(String[] args) {
-        
+        System.out.println(upLetter("qWe"));
+        System.out.println(downLetter("FdwDwd"));
     }
 
     public static void reversString(String string) {
@@ -26,29 +27,28 @@ public class StringReverse {
         return reversString;
     }
 
-    public static void upLetter(String string) {
+    public static String upLetter(String string) {
         char[] str = string.toCharArray();
-        for (char a : str) {
-
+        for (int i = 0; i < str.length; i++) {
+            char a = str[i];
             if (a < 122 & a > 97) {
-                a -= 32;
-                System.out.print(a);
-            } else {
-                System.out.print(a);
+                str[i] -= 32;
             }
         }
+        String result = new String(str);
+        return result;
+
     }
 
-    public static void downLetter(String string) {
+    public static String downLetter(String string) {
         char[] str = string.toCharArray();
-        for (int i : str) {
+        for (int i = 0; i < str.length; i++) {
             char a = str[i];
             if (a < 90 & a > 65) {
-                a += 32;
-                System.out.print(a);
-            } else {
-                System.out.print(a);
+                str[i] += 32;
             }
         }
+        String result = new String(str);
+        return result;
     }
 }
