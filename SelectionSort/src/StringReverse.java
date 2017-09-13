@@ -13,7 +13,6 @@ public class StringReverse {
         StringBuffer str = new StringBuffer();
         for (int i = string.length() - 1; i >= 0; i--) {
             str.append(string.charAt(i));
-
         }
 
         return str.toString();
@@ -26,9 +25,7 @@ public class StringReverse {
             arrString[i] = arrString[j];
             arrString[j] = a;
         }
-        String reversString = new String(arrString);
-        System.out.println(reversString);
-        return reversString;
+        return arrString.toString();
     }
 
     public static String upLetter(String string) {
@@ -39,8 +36,7 @@ public class StringReverse {
                 str[i] -= 32;
             }
         }
-        String result = new String(str);
-        return result;
+        return new String(str);
 
     }
 
@@ -52,7 +48,6 @@ public class StringReverse {
                 str[i] += 32;
             }
         }
-        String result = new String(str);
-        return result;
+        return new String(str);
     }
 }
