@@ -18,22 +18,22 @@ public class ApplicationCycle {
 
         Service service = new Service();
         System.out.println();
-        System.out.println("Если хотите посмотреть ваш баланс напишите \"баланс\"" + "\n" +
-                "Для того что бы положить деньги напишите \"зачислить\" и сумму в цифрах," + "\n" +
-                "снять напишите \"снять\" и сумму в цифрах " + "\n" +
+        System.out.println("Если хотите посмотреть ваш баланс напишите \"balance\"" + "\n" +
+                "Для того что бы положить деньги напишите \"put\" "+ "\n" +
+                "снять напишите \"take\"  " + "\n" +
                 "ВНИМАНИЕ БАНКОМАТ ХРАНИТ КУПЮРЫ НОМИНАЛОМ 5, 10, 20" + "\n" +
-                "Если хотите выйти \"выход\"");
+                "Если хотите выйти \"exit\"");
         while (true) {
 
             String keyWord = bufferedReader.readLine();
-            if ("выход".equals(keyWord)) break;
+            if ("exit".equals(keyWord)) break;
             switch (keyWord) {
-                case "зачислить":
+                case "put":
                     System.out.print("введите сумму : ");
                     int putMoneyValue = Integer.parseInt(bufferedReader.readLine());
                     service.putMoney(putMoneyValue);
                     break;
-                case "снять":
+                case "take":
                     System.out.print("введите сумму : ");
                     boolean identifier = false;
                     while (!identifier) {
@@ -56,7 +56,7 @@ public class ApplicationCycle {
                         }
                     }
                     break;
-                case "баланс":
+                case "balance":
                     System.out.println(service.giveMyCardAccount());
                     break;
                 default:
