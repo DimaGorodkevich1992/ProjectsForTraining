@@ -9,7 +9,7 @@ public interface MoneyOperations {
 
     void putMoney(int putValue);
 
-    void takeMoney() throws IOException;
+    void takeMoney(int takeValue);
 
     int giveMyCardAccount();
 

@@ -8,6 +8,4 @@ public class Money {
     int cash = 3422 ;
 
 
-
-
 }

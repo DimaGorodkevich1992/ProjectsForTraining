@@ -16,19 +16,17 @@ public class ApplicationCycle {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
 
-
-
         Service service = new Service();
         System.out.println();
         System.out.println("Если хотите посмотреть ваш баланс напишите \"баланс\"" + "\n" +
                 "Для того что бы положить деньги напишите \"зачислить\" и сумму в цифрах," + "\n" +
                 "снять напишите \"снять\" и сумму в цифрах " + "\n" +
-                "ВНИМАНИЕ БАНКОМАТ ХРАНИТ КУПЮРЫ НОМИНАЛОМ 5, 10, 20"+"\n" +
-                "Если хотите выйти \"выход\" ");
-        while (true){
+                "ВНИМАНИЕ БАНКОМАТ ХРАНИТ КУПЮРЫ НОМИНАЛОМ 5, 10, 20" + "\n" +
+                "Если хотите выйти \"выход\"");
+        while (true) {
 
             String keyWord = bufferedReader.readLine();
-            if("выход".equals(keyWord))break;
+            if ("выход".equals(keyWord)) break;
             switch (keyWord) {
                 case "зачислить":
                     System.out.print("введите сумму : ");
@@ -36,7 +34,27 @@ public class ApplicationCycle {
                     service.putMoney(putMoneyValue);
                     break;
                 case "снять":
-                    service.takeMoney();
+                    System.out.print("введите сумму : ");
+                    boolean identifier = false;
+                    while (!identifier) {
+                        int takeValue = Integer.parseInt(bufferedReader.readLine());
+                        if (takeValue > service.giveMyCardAccount()) {
+                            System.out.print("Введенная вами сумма превышает ваш баланс , баланс вашего счета "
+                                    + service.giveMyCardAccount() + " введите сумму : ");
+                            continue;
+                        }
+                        int size = AtmConfig.getBanknotes().size();
+                        for (int index = 0; index < size; index++) {
+                            if (takeValue % AtmConfig.getBanknotes().get(index) == 0) {
+                                service.takeMoney(takeValue);
+                                identifier = true;
+                                break;
+                            } else if (index == size - 1) {
+                                System.out.print("Вы ввели не корректную сумму , банкомат выдает купюры 5, 10, 20" + " введите сумму : ");
+                                continue;
+                            }
+                        }
+                    }
                     break;
                 case "баланс":
                     System.out.println(service.giveMyCardAccount());
