@@ -18,29 +18,29 @@ public class ApplicationCycle {
 
         Service service = new Service();
         System.out.println();
-        System.out.println("Если хотите посмотреть ваш баланс напишите \"balance\"" + "\n" +
-                "Для того что бы положить деньги напишите \"put\" "+ "\n" +
-                "снять напишите \"take\"  " + "\n" +
-                "ВНИМАНИЕ БАНКОМАТ ХРАНИТ КУПЮРЫ НОМИНАЛОМ 5, 10, 20" + "\n" +
-                "Если хотите выйти \"exit\"");
+        System.out.println("Check your balance enter \"balance\"" + "\n" +
+                "To put money enter \"put\" "+ "\n" +
+                "To take money enter \"take\"  " + "\n" +
+                "Attention ATM has bank notes 5, 10, 20" + "\n" +
+                "To exit enter \"exit\"");
         while (true) {
 
             String keyWord = bufferedReader.readLine();
             if ("exit".equals(keyWord)) break;
             switch (keyWord) {
                 case "put":
-                    System.out.print("введите сумму : ");
+                    System.out.print("enter money amount : ");
                     int putMoneyValue = Integer.parseInt(bufferedReader.readLine());
                     service.putMoney(putMoneyValue);
                     break;
                 case "take":
-                    System.out.print("введите сумму : ");
+                    System.out.print("enter money amount : ");
                     boolean identifier = false;
                     while (!identifier) {
                         int takeValue = Integer.parseInt(bufferedReader.readLine());
                         if (takeValue > service.giveMyCardAccount()) {
-                            System.out.print("Введенная вами сумма превышает ваш баланс , баланс вашего счета "
-                                    + service.giveMyCardAccount() + " введите сумму : ");
+                            System.out.print("Wrong money amount , your balance "
+                                    + service.giveMyCardAccount() + " enter money amount : ");
                             continue;
                         }
                         int size = AtmConfig.getBanknotes().size();
@@ -50,7 +50,7 @@ public class ApplicationCycle {
                                 identifier = true;
                                 break;
                             } else if (index == size - 1) {
-                                System.out.print("Вы ввели не корректную сумму , банкомат выдает купюры 5, 10, 20" + " введите сумму : ");
+                                System.out.print("Wrong money amount , ATM has bank notes 5, 10, 20" + " enter money amount : ");
                                 continue;
                             }
                         }
@@ -60,7 +60,7 @@ public class ApplicationCycle {
                     System.out.println(service.giveMyCardAccount());
                     break;
                 default:
-                    System.out.println("некоректно введен текст");
+                    System.out.println("Wrong request");
             }
         }
     }

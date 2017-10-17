@@ -9,13 +9,13 @@ public class Service implements MoneyOperations {
     @Override
     public void putMoney(int putValue) {
         money.cash += putValue;
-        System.out.println("деньги зачислены , ваш баланс " + money.cash);
+        System.out.println("Money trasfered your balance " + money.cash);
     }
 
     @Override
     public void takeMoney(int takeValue) {
         money.cash-= takeValue;
-        System.out.println("сумма снята , ваш баланс " + money.cash);
+        System.out.println("Money trasfered your balance " + money.cash);
     }
 
 
