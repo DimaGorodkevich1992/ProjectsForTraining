@@ -1,6 +1,8 @@
 package com.gorodkevichApp.Atm;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.util.regex.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,47 +14,60 @@ import java.io.InputStreamReader;
 public class ApplicationCycle {
 
 
-    public static void compliteAnOperation() throws IOException {
+    public static void compliteAnOperation() throws IOException, RuntimeException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+        Pattern p = Pattern.compile("\\d+");
 
         Service service = new Service();
-        System.out.println();
-        System.out.println("Check your balance enter \"balance\"" + "\n" +
-                "To put money enter \"put\" "+ "\n" +
+        String menu = "Check your balance enter \"balance\"" + "\n" +
+                "To put money enter \"put\" " + "\n" +
                 "To take money enter \"take\"  " + "\n" +
                 "Attention ATM has bank notes 5, 10, 20" + "\n" +
-                "To exit enter \"exit\"");
-        while (true) {
+                "To exit enter \"exit\"";
 
+        while (true) {
+            System.out.println();
+            System.out.println(menu);
             String keyWord = bufferedReader.readLine();
             if ("exit".equals(keyWord)) break;
             switch (keyWord) {
                 case "put":
-                    System.out.print("enter money amount : ");
-                    int putMoneyValue = Integer.parseInt(bufferedReader.readLine());
-                    service.putMoney(putMoneyValue);
+                    System.out.print("enter money amount to put : ");
+                    while (true) {
+                        String putValue = bufferedReader.readLine();
+                        Matcher putMatcer = p.matcher(putValue);
+                        if (putMatcer.matches()) {
+                            int tmpPutValue = Integer.parseInt(putValue);
+                            service.putMoney(tmpPutValue);
+                        } else if (putValue.equals("exit")){
+                            break;
+                        }else{
+                            System.out.print("You entered letter but you need number !!! enter money amount : ");
+                        }
+                        break;
+                    }
                     break;
                 case "take":
-                    System.out.print("enter money amount : ");
-                    boolean identifier = false;
-                    while (!identifier) {
-                        int takeValue = Integer.parseInt(bufferedReader.readLine());
-                        if (takeValue > service.giveMyCardAccount()) {
-                            System.out.print("Wrong money amount , your balance "
-                                    + service.giveMyCardAccount() + " enter money amount : ");
-                            continue;
-                        }
-                        int size = AtmConfig.getBanknotes().size();
-                        for (int index = 0; index < size; index++) {
-                            if (takeValue % AtmConfig.getBanknotes().get(index) == 0) {
-                                service.takeMoney(takeValue);
-                                identifier = true;
-                                break;
-                            } else if (index == size - 1) {
-                                System.out.print("Wrong money amount , ATM has bank notes 5, 10, 20" + " enter money amount : ");
+
+                    System.out.print("enter money amount to take : ");
+
+                    while (true) {
+                        String takeValue = bufferedReader.readLine();
+                        Matcher m = p.matcher(takeValue);
+                        if (m.matches()) {
+                            int tmpTakeValue = Integer.parseInt(takeValue);
+                            if (tmpTakeValue > service.giveMyCardAccount()) {
+                                System.out.print("Entered money amount exceeds your balance "
+                                        + service.giveMyCardAccount() + " enter money amount : ");
                                 continue;
-                            }
+                            } else if (service.takeMoney(tmpTakeValue)) {
+                                break;
+                            } else continue;
+                        } else if (takeValue.equals("exit")) {
+                            break;
+                        } else {
+                            System.out.print("You entered letter but you need number !!! enter money amount : ");
                         }
                     }
                     break;

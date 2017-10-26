@@ -9,7 +9,7 @@ public interface MoneyOperations {
 
     void putMoney(int putValue);
 
-    void takeMoney(int takeValue);
+    boolean takeMoney(int takeValue);
 
     int giveMyCardAccount();
 

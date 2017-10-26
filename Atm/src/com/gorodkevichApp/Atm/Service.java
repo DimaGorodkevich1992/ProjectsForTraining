@@ -13,11 +13,22 @@ public class Service implements MoneyOperations {
     }
 
     @Override
-    public void takeMoney(int takeValue) {
-        money.cash-= takeValue;
-        System.out.println("Money trasfered your balance " + money.cash);
+    public boolean takeMoney(int takeValue) {
+        boolean point = false;
+        int numberOfBanknotes = AtmConfig.getBanknotes().size();
+        for (int index = 0; index < numberOfBanknotes; index++) {
+            if (takeValue % AtmConfig.getBanknotes().get(index) == 0) {
+                money.cash -= takeValue;
+                System.out.println("Money trasfered your balance " + money.cash);
+                point = true;
+                break;
+            } else if (index == numberOfBanknotes - 1) {
+                System.out.print("Wrong money amount , ATM has bank notes 5, 10, 20\" + \" enter money amount : ");
+                break;
+            }
+        }
+        return point;
     }
-
 
     @Override
     public int giveMyCardAccount() {
