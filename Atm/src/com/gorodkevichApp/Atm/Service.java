@@ -8,8 +8,8 @@ public class Service implements MoneyOperations {
 
     @Override
     public void putMoney(int putValue) {
-        money.cash += putValue;
-        System.out.println("Money trasfered your balance " + money.cash);
+        money.setCash(money.getCash()+ putValue);
+        System.out.println("Money trasfered your balance " + money.getCash());
     }
 
     @Override
@@ -18,8 +18,8 @@ public class Service implements MoneyOperations {
         int numberOfBanknotes = AtmConfig.getBanknotes().size();
         for (int index = 0; index < numberOfBanknotes; index++) {
             if (takeValue % AtmConfig.getBanknotes().get(index) == 0) {
-                money.cash -= takeValue;
-                System.out.println("Money trasfered your balance " + money.cash);
+                money.setCash(money.getCash()- takeValue);
+                System.out.println("Money trasfered your balance " + money.getCash());
                 point = true;
                 break;
             } else if (index == numberOfBanknotes - 1) {
@@ -32,7 +32,7 @@ public class Service implements MoneyOperations {
 
     @Override
     public int giveMyCardAccount() {
-        return money.cash;
+        return money.getCash();
     }
 
 

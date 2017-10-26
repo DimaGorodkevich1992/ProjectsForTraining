@@ -2,10 +2,16 @@ package com.gorodkevichApp.Atm;
 
 
 
-public class Money {
+class Money {
 
 
-    int cash = 3422 ;
+   private int cash = 3422 ;
 
+     public int getCash() {
+         return cash;
+     }
 
-}
+     public void setCash(int cash) {
+         this.cash = cash;
+     }
+ }

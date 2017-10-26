@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 public class ApplicationCycle {
 
 
-    public static void compliteAnOperation() throws IOException, RuntimeException {
+    public static void startApplicationCycle() throws IOException, RuntimeException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         Pattern p = Pattern.compile("\\d+");
