@@ -43,7 +43,9 @@ public class ApplicationCycle {
                             break;
                         } else {
                             System.out.print("You entered letter but you need number !!! enter money amount : ");
+                            continue;
                         }
+                        break;
                     }
                     break;
                 case "take":
