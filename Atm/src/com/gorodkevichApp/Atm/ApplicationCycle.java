@@ -1,6 +1,5 @@
 package com.gorodkevichApp.Atm;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.regex.*;
 import java.io.BufferedReader;
@@ -40,18 +39,15 @@ public class ApplicationCycle {
                         if (putMatcer.matches()) {
                             int tmpPutValue = Integer.parseInt(putValue);
                             service.putMoney(tmpPutValue);
-                        } else if (putValue.equals("exit")){
+                        } else if (putValue.equals("exit")) {
                             break;
-                        }else{
+                        } else {
                             System.out.print("You entered letter but you need number !!! enter money amount : ");
                         }
-                        break;
                     }
                     break;
                 case "take":
-
                     System.out.print("enter money amount to take : ");
-
                     while (true) {
                         String takeValue = bufferedReader.readLine();
                         Matcher m = p.matcher(takeValue);
