@@ -18,13 +18,13 @@ public class ApplicationCycle {
 
         Pattern p = Pattern.compile("\\d+");
 
-        Service service = new Service();
+        MoneyOperations moneyOperations = new Service();
+
         String menu = "Check your balance enter \"balance\"" + "\n" +
                 "To put money enter \"put\" " + "\n" +
                 "To take money enter \"take\"  " + "\n" +
                 "Attention ATM has bank notes 5, 10, 20" + "\n" +
                 "To exit enter \"exit\"";
-
         while (true) {
             System.out.println();
             System.out.println(menu);
@@ -38,7 +38,7 @@ public class ApplicationCycle {
                         Matcher putMatcer = p.matcher(putValue);
                         if (putMatcer.matches()) {
                             int tmpPutValue = Integer.parseInt(putValue);
-                            service.putMoney(tmpPutValue);
+                            moneyOperations.putMoney(tmpPutValue);
                         } else if (putValue.equals("exit")) {
                             break;
                         } else {
@@ -55,11 +55,11 @@ public class ApplicationCycle {
                         Matcher m = p.matcher(takeValue);
                         if (m.matches()) {
                             int tmpTakeValue = Integer.parseInt(takeValue);
-                            if (tmpTakeValue > service.giveMyCardAccount()) {
+                            if (tmpTakeValue > moneyOperations.giveMyCardAccount()) {
                                 System.out.print("Entered money amount exceeds your balance "
-                                        + service.giveMyCardAccount() + " enter money amount : ");
+                                        + moneyOperations.giveMyCardAccount() + " enter money amount : ");
                                 continue;
-                            } else if (service.takeMoney(tmpTakeValue)) {
+                            } else if (moneyOperations.takeMoney(tmpTakeValue)) {
                                 break;
                             } else continue;
                         } else if (takeValue.equals("exit")) {
@@ -70,7 +70,7 @@ public class ApplicationCycle {
                     }
                     break;
                 case "balance":
-                    System.out.println(service.giveMyCardAccount());
+                    System.out.println(moneyOperations.giveMyCardAccount());
                     break;
                 default:
                     System.out.println("Wrong request");
