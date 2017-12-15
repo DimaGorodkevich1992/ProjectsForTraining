@@ -1,37 +1,39 @@
 package com.gorodkevichApp.TestDb.model.domain;
 
 public class Users {
-    private int userId;
-    private String userName;
-    private int userStatus;
+    private String usersName;
+    private String usersPassword;
+    private boolean usersStatus;
 
-    public Users(int idUser, String userName, int userStatus) {
-        this.userId = idUser;
-        this.userName = userName;
-        this.userStatus = userStatus;
+    public Users(String usersName, boolean usersStatus) {
+        this.usersName = usersName;
+        this.usersStatus = usersStatus;
     }
 
-    public int getIdUser() {
-        return userId;
+    public Users(String usersName, String usersPassword) {
+        this.usersName = usersName;
+        this.usersPassword = usersPassword;
+    }
+
+    public String getUsersName() {
+        return usersName;
     }
 
 
-    public String getUserName() {
-        return userName;
+    public String getUsersPassword() {
+        return usersPassword;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+
+    public boolean isUsersStatus() {
+        return usersStatus;
     }
 
-    public int getUserStatus() {
-        return userStatus;
+    public void setUsersName(String usersName) {
+        this.usersName = usersName;
     }
 
-    public void setUserStatus(int userNumber) {
-        this.userStatus = userStatus;
+    public void setUsersPassword(String usersPassword) {
+        this.usersPassword = usersPassword;
     }
 }
-
-
-

@@ -3,11 +3,13 @@ package com.gorodkevichApp.TestDb.model.dao;
 import com.gorodkevichApp.TestDb.model.domain.Users;
 
 public interface UsersDao {
-    Users getById(int id);
 
-    void insertUser(Users user);
+    Users getForUsers(String name);
 
-    void updateUser(Users user);
+    void create(Users users);
 
+    void updatePassword(String name, String newPassword);
+
+    void updateStatus(String name);
 
 }
