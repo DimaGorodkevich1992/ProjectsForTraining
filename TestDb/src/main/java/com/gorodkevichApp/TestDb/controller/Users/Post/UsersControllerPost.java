@@ -16,7 +16,7 @@ public class UsersControllerPost {
         userServices.createUser(user);
     }
 
-    @RequestMapping(value = "/login/updatePassword", method = RequestMethod.PUT)
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.PUT)
     public boolean updateUserPassword(@RequestBody UserWeb userWeb) {
         if (userServices.updateUsersPassword(userWeb)) {
             return true;

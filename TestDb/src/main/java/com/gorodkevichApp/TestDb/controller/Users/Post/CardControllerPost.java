@@ -13,7 +13,7 @@ public class CardControllerPost {
     @Autowired
     CardServices cardServices = new CardServices();
 
-    @RequestMapping(value = "/login/addCard", method = RequestMethod.POST)
+    @RequestMapping(value = "/addCard", method = RequestMethod.POST)
     public boolean addCard(@RequestBody Card card) {
         if (cardServices.addCard(card)) {
             return true;
@@ -21,7 +21,7 @@ public class CardControllerPost {
         return false;
     }
 
-    @RequestMapping(value = "/login/updateCardStatus/",method = RequestMethod.PUT)
+    @RequestMapping(value = "/updateCardStatus/",method = RequestMethod.PUT)
     public String updateCardStatus (@RequestBody int cardNumber){
         return cardServices.updateCardStatus(cardNumber);
     }
