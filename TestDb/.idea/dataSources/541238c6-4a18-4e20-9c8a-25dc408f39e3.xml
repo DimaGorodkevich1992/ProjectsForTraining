@@ -17,7 +17,7 @@
     </database>
     <schema id="5" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-12-15.11:38:15.647</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-12-25.22:59:22.652</IntrospectionTimestamp>
       <IntrospectionStateNumber>1255</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
@@ -39,8 +39,8 @@
     </schema>
     <schema id="11" parent="3" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-12-15.11:38:15.305</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1322</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-12-25.22:59:22.330</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1436</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -69,48 +69,49 @@
       <StateNumber>1251</StateNumber>
     </table>
     <sequence id="19" parent="11" name="account_account_id_seq">
-      <ObjectId>34283</ObjectId>
-      <StateNumber>1321</StateNumber>
+      <ObjectId>34620</ObjectId>
+      <StateNumber>1430</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="20" parent="11" name="card_card_id_seq">
-      <ObjectId>34228</ObjectId>
-      <StateNumber>1298</StateNumber>
+      <ObjectId>34609</ObjectId>
+      <StateNumber>1429</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="21" parent="11" name="history_history_id_seq">
-      <ObjectId>34205</ObjectId>
-      <StateNumber>1295</StateNumber>
+    <sequence id="21" parent="11" name="operation_payment_operation_payment_id_seq">
+      <ObjectId>34644</ObjectId>
+      <StateNumber>1432</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="22" parent="11" name="users_users_id_seq">
-      <ObjectId>34216</ObjectId>
-      <StateNumber>1297</StateNumber>
+    <sequence id="22" parent="11" name="type_type_id_seq">
+      <ObjectId>34631</ObjectId>
+      <StateNumber>1431</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="23" parent="11" name="account">
-      <ObjectId>34285</ObjectId>
-      <StateNumber>1322</StateNumber>
+    <sequence id="23" parent="11" name="users_users_id_seq">
+      <ObjectId>34597</ObjectId>
+      <StateNumber>1428</StateNumber>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="24" parent="11" name="account">
+      <ObjectId>34622</ObjectId>
+      <StateNumber>1436</StateNumber>
     </table>
-    <table id="24" parent="11" name="card">
-      <ObjectId>34230</ObjectId>
-      <StateNumber>1322</StateNumber>
+    <table id="25" parent="11" name="card">
+      <ObjectId>34611</ObjectId>
+      <StateNumber>1434</StateNumber>
     </table>
-    <table id="25" parent="11" name="history">
-      <ObjectId>34207</ObjectId>
-      <StateNumber>1300</StateNumber>
+    <table id="26" parent="11" name="operation_payment">
+      <ObjectId>34646</ObjectId>
+      <StateNumber>1436</StateNumber>
     </table>
-    <table id="26" parent="11" name="users">
-      <ObjectId>34218</ObjectId>
-      <StateNumber>1302</StateNumber>
+    <table id="27" parent="11" name="type">
+      <ObjectId>34633</ObjectId>
+      <StateNumber>1435</StateNumber>
     </table>
-    <table id="27" parent="11" name="users_card">
-      <ObjectId>34213</ObjectId>
-      <StateNumber>1303</StateNumber>
-    </table>
-    <table id="28" parent="11" name="users_history">
-      <ObjectId>34202</ObjectId>
-      <StateNumber>1301</StateNumber>
+    <table id="28" parent="11" name="users">
+      <ObjectId>34599</ObjectId>
+      <StateNumber>1433</StateNumber>
     </table>
     <column id="29" parent="18" name="user_id">
       <Position>1</Position>
@@ -137,271 +138,286 @@
       <UnderlyingIndexName>user_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="23" name="account_id">
+    <column id="33" parent="24" name="account_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1321</StateNumber>
+      <StateNumber>1430</StateNumber>
       <SequenceName>account_account_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;account_account_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="34" parent="23" name="account_number">
+    <column id="34" parent="24" name="account_number">
       <Position>2</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1321</StateNumber>
+      <StateNumber>1430</StateNumber>
     </column>
-    <column id="35" parent="23" name="account_money">
+    <column id="35" parent="24" name="account_money">
       <Position>3</Position>
-      <DataType>numeric|0</DataType>
+      <DataType>money|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1321</StateNumber>
+      <StateNumber>1430</StateNumber>
     </column>
-    <column id="36" parent="23" name="account_status">
+    <column id="36" parent="24" name="account_status">
       <Position>4</Position>
       <DataType>boolean|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1321</StateNumber>
+      <StateNumber>1430</StateNumber>
       <DefaultExpression>true</DefaultExpression>
     </column>
-    <index id="37" parent="23" name="account_pk">
-      <ObjectId>34293</ObjectId>
+    <column id="37" parent="24" name="account_card_id">
+      <Position>5</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1430</StateNumber>
+    </column>
+    <index id="38" parent="24" name="account_pk">
+      <ObjectId>34627</ObjectId>
       <ColNames>account_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="38" parent="23" name="account_account_number_key">
-      <ObjectId>34295</ObjectId>
+    <index id="39" parent="24" name="account_account_number_key">
+      <ObjectId>34629</ObjectId>
       <ColNames>account_number</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="39" parent="23" name="account_pk">
-      <ObjectId>34294</ObjectId>
+    <key id="40" parent="24" name="account_pk">
+      <ObjectId>34628</ObjectId>
       <ColNames>account_id</ColNames>
       <UnderlyingIndexName>account_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="40" parent="23" name="account_account_number_key">
-      <ObjectId>34296</ObjectId>
+    <key id="41" parent="24" name="account_account_number_key">
+      <ObjectId>34630</ObjectId>
       <ColNames>account_number</ColNames>
       <UnderlyingIndexName>account_account_number_key</UnderlyingIndexName>
     </key>
-    <column id="41" parent="24" name="card_id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1298</StateNumber>
-      <SequenceName>card_card_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;card_card_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="42" parent="24" name="card_number">
-      <Position>2</Position>
-      <DataType>bigint|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1298</StateNumber>
-    </column>
-    <column id="43" parent="24" name="card_account_id">
-      <Position>3</Position>
-      <DataType>bigint|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1298</StateNumber>
-    </column>
-    <index id="44" parent="24" name="card_pk">
-      <ObjectId>34234</ObjectId>
-      <ColNames>card_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="45" parent="24" name="card_card_number_key">
-      <ObjectId>34236</ObjectId>
-      <ColNames>card_number</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="46" parent="24" name="card_card_account_id_key">
-      <ObjectId>34238</ObjectId>
-      <ColNames>card_account_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="47" parent="24" name="card_pk">
-      <ObjectId>34235</ObjectId>
-      <ColNames>card_id</ColNames>
-      <UnderlyingIndexName>card_pk</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <key id="48" parent="24" name="card_card_number_key">
-      <ObjectId>34237</ObjectId>
-      <ColNames>card_number</ColNames>
-      <UnderlyingIndexName>card_card_number_key</UnderlyingIndexName>
-    </key>
-    <key id="49" parent="24" name="card_card_account_id_key">
-      <ObjectId>34239</ObjectId>
-      <ColNames>card_account_id</ColNames>
-      <UnderlyingIndexName>card_card_account_id_key</UnderlyingIndexName>
-    </key>
-    <foreign-key id="50" parent="24" name="card_fk0">
-      <ObjectId>34297</ObjectId>
-      <ColNames>card_account_id</ColNames>
-      <RefTableId>34285</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>account</RefTableName>
-      <RefKeyName>account_pk</RefKeyName>
-      <RefColNames>account_id</RefColNames>
-    </foreign-key>
-    <column id="51" parent="25" name="history_id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1295</StateNumber>
-      <SequenceName>history_history_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;history_history_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="52" parent="25" name="history_type_operation">
-      <Position>2</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1295</StateNumber>
-    </column>
-    <column id="53" parent="25" name="history_data_operation">
-      <Position>3</Position>
-      <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1295</StateNumber>
-    </column>
-    <column id="54" parent="25" name="history_time_operation">
-      <Position>4</Position>
-      <DataType>time|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1295</StateNumber>
-    </column>
-    <column id="55" parent="25" name="history_amount_operation">
-      <Position>5</Position>
-      <DataType>money|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1295</StateNumber>
-    </column>
-    <index id="56" parent="25" name="history_pk">
-      <ObjectId>34211</ObjectId>
-      <ColNames>history_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="57" parent="25" name="history_pk">
-      <ObjectId>34212</ObjectId>
-      <ColNames>history_id</ColNames>
-      <UnderlyingIndexName>history_pk</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="58" parent="26" name="users_id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1297</StateNumber>
-      <SequenceName>users_users_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;users_users_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="59" parent="26" name="users_name">
-      <Position>2</Position>
-      <DataType>varchar(150)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1297</StateNumber>
-    </column>
-    <column id="60" parent="26" name="users_password">
-      <Position>3</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1297</StateNumber>
-    </column>
-    <column id="61" parent="26" name="users_status">
-      <Position>4</Position>
-      <DataType>boolean|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1297</StateNumber>
-      <DefaultExpression>true</DefaultExpression>
-    </column>
-    <column id="62" parent="26" name="users_admin">
-      <Position>5</Position>
-      <DataType>boolean|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1297</StateNumber>
-      <DefaultExpression>false</DefaultExpression>
-    </column>
-    <index id="63" parent="26" name="users_pk">
-      <ObjectId>34224</ObjectId>
-      <ColNames>users_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="64" parent="26" name="users_users_name_key">
-      <ObjectId>34226</ObjectId>
-      <ColNames>users_name</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="65" parent="26" name="users_pk">
-      <ObjectId>34225</ObjectId>
-      <ColNames>users_id</ColNames>
-      <UnderlyingIndexName>users_pk</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <key id="66" parent="26" name="users_users_name_key">
-      <ObjectId>34227</ObjectId>
-      <ColNames>users_name</ColNames>
-      <UnderlyingIndexName>users_users_name_key</UnderlyingIndexName>
-    </key>
-    <column id="67" parent="27" name="uc_users_id">
-      <Position>1</Position>
-      <DataType>bigint|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1296</StateNumber>
-    </column>
-    <column id="68" parent="27" name="uc_card_id">
-      <Position>2</Position>
-      <DataType>bigint|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1296</StateNumber>
-    </column>
-    <foreign-key id="69" parent="27" name="users_card_fk0">
-      <ObjectId>34261</ObjectId>
-      <ColNames>uc_users_id</ColNames>
-      <RefTableId>34218</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>users</RefTableName>
-      <RefKeyName>users_pk</RefKeyName>
-      <RefColNames>users_id</RefColNames>
-    </foreign-key>
-    <foreign-key id="70" parent="27" name="users_card_fk1">
-      <ObjectId>34266</ObjectId>
-      <ColNames>uc_card_id</ColNames>
-      <RefTableId>34230</RefTableId>
+    <foreign-key id="42" parent="24" name="account_fk0">
+      <ObjectId>34659</ObjectId>
+      <ColNames>account_card_id</ColNames>
+      <RefTableId>34611</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>card</RefTableName>
       <RefKeyName>card_pk</RefKeyName>
       <RefColNames>card_id</RefColNames>
     </foreign-key>
-    <column id="71" parent="28" name="up_history_id">
+    <column id="43" parent="25" name="card_id">
       <Position>1</Position>
-      <DataType>bigint|0</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1294</StateNumber>
+      <StateNumber>1429</StateNumber>
+      <SequenceName>card_card_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;card_card_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="72" parent="28" name="up_users_id">
+    <column id="44" parent="25" name="card_number">
       <Position>2</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1294</StateNumber>
+      <StateNumber>1429</StateNumber>
     </column>
-    <foreign-key id="73" parent="28" name="users_history_fk0">
-      <ObjectId>34251</ObjectId>
-      <ColNames>up_history_id</ColNames>
-      <RefTableId>34207</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>history</RefTableName>
-      <RefKeyName>history_pk</RefKeyName>
-      <RefColNames>history_id</RefColNames>
-    </foreign-key>
-    <foreign-key id="74" parent="28" name="users_history_fk1">
-      <ObjectId>34256</ObjectId>
-      <ColNames>up_users_id</ColNames>
-      <RefTableId>34218</RefTableId>
+    <column id="45" parent="25" name="card_users_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1429</StateNumber>
+    </column>
+    <column id="46" parent="25" name="card_status">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1429</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+    </column>
+    <index id="47" parent="25" name="card_pk">
+      <ObjectId>34616</ObjectId>
+      <ColNames>card_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="48" parent="25" name="card_card_number_key">
+      <ObjectId>34618</ObjectId>
+      <ColNames>card_number</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="25" name="card_pk">
+      <ObjectId>34617</ObjectId>
+      <ColNames>card_id</ColNames>
+      <UnderlyingIndexName>card_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="50" parent="25" name="card_card_number_key">
+      <ObjectId>34619</ObjectId>
+      <ColNames>card_number</ColNames>
+      <UnderlyingIndexName>card_card_number_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="51" parent="25" name="card_fk0">
+      <ObjectId>34654</ObjectId>
+      <ColNames>card_users_id</ColNames>
+      <RefTableId>34599</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pk</RefKeyName>
       <RefColNames>users_id</RefColNames>
     </foreign-key>
+    <column id="52" parent="26" name="operation_payment_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1432</StateNumber>
+      <SequenceName>operation_payment_operation_payment_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;operation_payment_operation_payment_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="53" parent="26" name="operation_payment_type">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1432</StateNumber>
+    </column>
+    <column id="54" parent="26" name="operation_payment_date_time">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1432</StateNumber>
+    </column>
+    <column id="55" parent="26" name="operation_payment_money">
+      <Position>4</Position>
+      <DataType>money|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1432</StateNumber>
+    </column>
+    <column id="56" parent="26" name="operation_payment_account_id">
+      <Position>5</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1432</StateNumber>
+    </column>
+    <index id="57" parent="26" name="operation_payment_pk">
+      <ObjectId>34650</ObjectId>
+      <ColNames>operation_payment_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="58" parent="26" name="operation_payment_operation_payment_account_id_key">
+      <ObjectId>34652</ObjectId>
+      <ColNames>operation_payment_account_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="26" name="operation_payment_pk">
+      <ObjectId>34651</ObjectId>
+      <ColNames>operation_payment_id</ColNames>
+      <UnderlyingIndexName>operation_payment_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="60" parent="26" name="operation_payment_operation_payment_account_id_key">
+      <ObjectId>34653</ObjectId>
+      <ColNames>operation_payment_account_id</ColNames>
+      <UnderlyingIndexName>operation_payment_operation_payment_account_id_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="61" parent="26" name="operation_payment_fk0">
+      <ObjectId>34664</ObjectId>
+      <ColNames>operation_payment_type</ColNames>
+      <RefTableId>34633</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>type</RefTableName>
+      <RefKeyName>type_pk</RefKeyName>
+      <RefColNames>type_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="62" parent="26" name="operation_payment_fk1">
+      <ObjectId>34669</ObjectId>
+      <ColNames>operation_payment_account_id</ColNames>
+      <RefTableId>34622</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>account</RefTableName>
+      <RefKeyName>account_pk</RefKeyName>
+      <RefColNames>account_id</RefColNames>
+    </foreign-key>
+    <column id="63" parent="27" name="type_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1431</StateNumber>
+      <SequenceName>type_type_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;type_type_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="64" parent="27" name="type_value">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1431</StateNumber>
+    </column>
+    <index id="65" parent="27" name="type_pk">
+      <ObjectId>34640</ObjectId>
+      <ColNames>type_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="66" parent="27" name="type_type_value_key">
+      <ObjectId>34642</ObjectId>
+      <ColNames>type_value</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="27" name="type_pk">
+      <ObjectId>34641</ObjectId>
+      <ColNames>type_id</ColNames>
+      <UnderlyingIndexName>type_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="68" parent="27" name="type_type_value_key">
+      <ObjectId>34643</ObjectId>
+      <ColNames>type_value</ColNames>
+      <UnderlyingIndexName>type_type_value_key</UnderlyingIndexName>
+    </key>
+    <column id="69" parent="28" name="users_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1428</StateNumber>
+      <SequenceName>users_users_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;users_users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="70" parent="28" name="users_name">
+      <Position>2</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1428</StateNumber>
+    </column>
+    <column id="71" parent="28" name="users_password">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1428</StateNumber>
+    </column>
+    <column id="72" parent="28" name="users_status">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1428</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+    </column>
+    <column id="73" parent="28" name="users_admin">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1428</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+    </column>
+    <index id="74" parent="28" name="users_pk">
+      <ObjectId>34605</ObjectId>
+      <ColNames>users_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="75" parent="28" name="users_users_name_key">
+      <ObjectId>34607</ObjectId>
+      <ColNames>users_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="28" name="users_pk">
+      <ObjectId>34606</ObjectId>
+      <ColNames>users_id</ColNames>
+      <UnderlyingIndexName>users_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="77" parent="28" name="users_users_name_key">
+      <ObjectId>34608</ObjectId>
+      <ColNames>users_name</ColNames>
+      <UnderlyingIndexName>users_users_name_key</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

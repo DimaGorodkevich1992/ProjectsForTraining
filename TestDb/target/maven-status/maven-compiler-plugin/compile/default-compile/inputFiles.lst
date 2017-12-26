@@ -1,4 +1,4 @@
-C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\Main.java
+C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\controller\Application.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\dao\UsersDao.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\domain\Account.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\dao\AllDao.java
@@ -9,8 +9,8 @@ C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\domain\Card
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\domain\Users.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\dao\AccountDao.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\domain\All.java
-C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\MyServlet.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\dao\CardDao.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\daoImpl\UsersDaoImpl.java
+C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\controller\Controller.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\dao\HistoryDao.java
 C:\project java\TestDb\src\main\java\com\gorodkevichApp\TestDb\model\domain\History.java

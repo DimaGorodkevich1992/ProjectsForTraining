@@ -3,14 +3,18 @@ package com.gorodkevichApp.TestDb.model.dao;
 import com.gorodkevichApp.TestDb.model.domain.Account;
 
 public interface AccountDao {
-    void set(Account account);
 
-    void putMoney(int accNumber,int ammount);
+    void createAccount(Account account, int numberCard);
 
-    int getMoney(int accNumber);
+    double getMoney(int accountNumber);
 
-    void updateStatusUser(int cadNumber);
+    void updateMoney(int accountNumber , double money);
 
-    void updateStatusAdmin(int cardNumber, boolean status);
+    void updateStatus(int accountNumber , boolean status);
+
+
+
+
+
 
 }
