@@ -1,0 +1,25 @@
+ALTER TABLE "account" DROP CONSTRAINT IF EXISTS "account_fk0";
+
+ALTER TABLE "check" DROP CONSTRAINT IF EXISTS "check_fk0";
+
+ALTER TABLE "request" DROP CONSTRAINT IF EXISTS "request_fk0";
+
+ALTER TABLE "history" DROP CONSTRAINT IF EXISTS "history_fk0";
+
+ALTER TABLE "history" DROP CONSTRAINT IF EXISTS "history_fk1";
+
+ALTER TABLE "validate" DROP CONSTRAINT IF EXISTS "validate_fk0";
+
+DROP TABLE IF EXISTS "client";
+
+DROP TABLE IF EXISTS "account";
+
+DROP TABLE IF EXISTS "check";
+
+DROP TABLE IF EXISTS "request";
+
+DROP TABLE IF EXISTS "type_operation";
+
+DROP TABLE IF EXISTS "history";
+
+DROP TABLE IF EXISTS "validate";
