@@ -1,8 +1,9 @@
 package by.gorodkevich.app.persistence.entity;
 
-import org.joda.time.DateTime;
+
 
 import javax.persistence.*;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "check")
@@ -14,11 +15,13 @@ public class CheckEntity extends Common {
     @Column(name = "check_money")
     private Double money;
     @Column(name = "check_time")
-    private DateTime dateTime;
+    private OffsetDateTime dateTime;
     @OneToOne
     @JoinColumn(name = "check_type_operation_id")
     private TypeOperationEntity typeOperationEntity;
-
+    @OneToOne
+    @JoinColumn(name = "check_request_id")
+    private RequestEntity requestEntity;
     @Override
     public int getId() {
         return id;
@@ -37,11 +40,11 @@ public class CheckEntity extends Common {
         this.money = money;
     }
 
-    public DateTime getDateTime() {
+    public OffsetDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(DateTime dateTime) {
+    public void setDateTime(OffsetDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -53,6 +56,14 @@ public class CheckEntity extends Common {
         this.typeOperationEntity = typeOperationEntity;
     }
 
+    public RequestEntity getRequestEntity() {
+        return requestEntity;
+    }
+
+    public void setRequestEntity(RequestEntity requestEntity) {
+        this.requestEntity = requestEntity;
+    }
+
     @Override
     public String toString() {
         return "CheckEntity{" +
@@ -60,6 +71,7 @@ public class CheckEntity extends Common {
                 ", money=" + money +
                 ", dateTime=" + dateTime +
                 ", typeOperationEntity=" + typeOperationEntity +
+                ", requestEntity=" + requestEntity +
                 '}';
     }
 }

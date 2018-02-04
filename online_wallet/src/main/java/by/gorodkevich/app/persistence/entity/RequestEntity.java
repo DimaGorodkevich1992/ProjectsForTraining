@@ -13,9 +13,8 @@ public class RequestEntity extends Common {
     private Long fromAccNumber;
     @Column(name = "request_to_acc_number")
     private Long toAccNumber;
-    @OneToOne
-    @JoinColumn(name = "request_check_id")
-    private CheckEntity checkEntity;
+    @Column(name = "request_unique_number")
+    private Integer uniqueNumber;
 
     @Override
     public int getId() {
@@ -43,21 +42,20 @@ public class RequestEntity extends Common {
         this.toAccNumber = toAccNumber;
     }
 
-    public CheckEntity getCheckEntity() {
-        return checkEntity;
+    public Integer getUniqueNumber() {
+        return uniqueNumber;
     }
 
-    public void setCheckEntity(CheckEntity checkEntity) {
-        this.checkEntity = checkEntity;
+    public void setUniqueNumber(Integer uniqueNumber) {
+        this.uniqueNumber = uniqueNumber;
     }
-
     @Override
     public String toString() {
         return "RequestEntity{" +
                 "id=" + id +
                 ", fromAccNumber=" + fromAccNumber +
                 ", toAccNumber=" + toAccNumber +
-                ", checkEntity=" + checkEntity +
+                ", uniqueNumber=" + uniqueNumber +
                 '}';
     }
 }

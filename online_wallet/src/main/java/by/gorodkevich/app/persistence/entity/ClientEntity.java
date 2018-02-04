@@ -15,6 +15,9 @@ public class ClientEntity extends Common {
     private String password;
     @Column(name = "client_email")
     private String email;
+    @Column(name = "client_is_admin")
+    private Boolean isAdmin;
+
 
     @Override
     public int getId() {
@@ -50,13 +53,11 @@ public class ClientEntity extends Common {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "ClientEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 }

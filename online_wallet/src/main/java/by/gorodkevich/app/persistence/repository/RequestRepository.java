@@ -6,4 +6,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RequestRepository extends JpaRepository<RequestEntity,Integer> {
+
+    //read
+
+    RequestEntity findById(int id);
+
+    RequestEntity findByUniqueNumber(int uniqueNumber);
 }

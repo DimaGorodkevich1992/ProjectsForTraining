@@ -19,6 +19,9 @@ public class AccountEntity extends Common {
     @Column(name = "account_number")
     private Long number;
 
+    public AccountEntity() {
+    }
+
     @Override
     public int getId() {
         return id;

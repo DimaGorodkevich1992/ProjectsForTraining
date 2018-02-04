@@ -18,8 +18,8 @@
     </database>
     <schema id="6" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-01-31.17:13:29.257</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1712</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-02-04.04:14:54.391</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2073</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -39,73 +39,73 @@
       <ObjectId>12648</ObjectId>
     </schema>
     <sequence id="12" parent="6" name="account_account_id_seq">
-      <ObjectId>43579</ObjectId>
-      <StateNumber>1701</StateNumber>
+      <ObjectId>52097</ObjectId>
+      <StateNumber>2062</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="13" parent="6" name="check_check_id_seq">
-      <ObjectId>43589</ObjectId>
-      <StateNumber>1702</StateNumber>
+      <ObjectId>52107</ObjectId>
+      <StateNumber>2063</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="14" parent="6" name="client_client_id_seq">
-      <ObjectId>43564</ObjectId>
-      <StateNumber>1700</StateNumber>
+      <ObjectId>52082</ObjectId>
+      <StateNumber>2061</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="15" parent="6" name="history_history_id_seq">
-      <ObjectId>43616</ObjectId>
-      <StateNumber>1705</StateNumber>
+      <ObjectId>52136</ObjectId>
+      <StateNumber>2066</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="16" parent="6" name="request_request_id_seq">
-      <ObjectId>43597</ObjectId>
-      <StateNumber>1703</StateNumber>
+      <ObjectId>52115</ObjectId>
+      <StateNumber>2064</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="17" parent="6" name="type_operation_type_operation_id_seq">
-      <ObjectId>43605</ObjectId>
-      <StateNumber>1704</StateNumber>
+    <sequence id="17" parent="6" name="token_token_id_seq">
+      <ObjectId>52144</ObjectId>
+      <StateNumber>2067</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="18" parent="6" name="validate_validate_id_seq">
-      <ObjectId>43624</ObjectId>
-      <StateNumber>1706</StateNumber>
+    <sequence id="18" parent="6" name="type_operation_type_operation_id_seq">
+      <ObjectId>52123</ObjectId>
+      <StateNumber>2065</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="19" parent="6" name="account">
-      <ObjectId>43581</ObjectId>
-      <StateNumber>1711</StateNumber>
+      <ObjectId>52099</ObjectId>
+      <StateNumber>2072</StateNumber>
     </table>
     <table id="20" parent="6" name="check">
-      <ObjectId>43591</ObjectId>
-      <StateNumber>1712</StateNumber>
+      <ObjectId>52109</ObjectId>
+      <StateNumber>2073</StateNumber>
     </table>
     <table id="21" parent="6" name="client">
-      <ObjectId>43566</ObjectId>
-      <StateNumber>1707</StateNumber>
+      <ObjectId>52084</ObjectId>
+      <StateNumber>2068</StateNumber>
     </table>
     <table id="22" parent="6" name="history">
-      <ObjectId>43618</ObjectId>
-      <StateNumber>1711</StateNumber>
+      <ObjectId>52138</ObjectId>
+      <StateNumber>2072</StateNumber>
     </table>
     <table id="23" parent="6" name="request">
-      <ObjectId>43599</ObjectId>
-      <StateNumber>1709</StateNumber>
+      <ObjectId>52117</ObjectId>
+      <StateNumber>2070</StateNumber>
     </table>
-    <table id="24" parent="6" name="type_operation">
-      <ObjectId>43607</ObjectId>
-      <StateNumber>1710</StateNumber>
+    <table id="24" parent="6" name="token">
+      <ObjectId>52146</ObjectId>
+      <StateNumber>2073</StateNumber>
     </table>
-    <table id="25" parent="6" name="validate">
-      <ObjectId>43626</ObjectId>
-      <StateNumber>1712</StateNumber>
+    <table id="25" parent="6" name="type_operation">
+      <ObjectId>52125</ObjectId>
+      <StateNumber>2071</StateNumber>
     </table>
     <column id="26" parent="19" name="account_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1701</StateNumber>
+      <StateNumber>2062</StateNumber>
       <SequenceName>account_account_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;account_account_id_seq&apos;::regclass)</DefaultExpression>
     </column>
@@ -113,51 +113,50 @@
       <Position>2</Position>
       <DataType>boolean|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1701</StateNumber>
+      <StateNumber>2062</StateNumber>
     </column>
     <column id="28" parent="19" name="account_client_id">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1701</StateNumber>
+      <StateNumber>2062</StateNumber>
     </column>
     <column id="29" parent="19" name="account_money">
       <Position>4</Position>
       <DataType>money|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1701</StateNumber>
+      <StateNumber>2062</StateNumber>
     </column>
     <column id="30" parent="19" name="account_number">
       <Position>5</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1701</StateNumber>
+      <StateNumber>2062</StateNumber>
     </column>
     <index id="31" parent="19" name="account_pk">
-      <ObjectId>43585</ObjectId>
+      <ObjectId>52103</ObjectId>
       <ColNames>account_id</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="32" parent="19" name="account_account_number_key">
-      <ObjectId>43587</ObjectId>
+      <ObjectId>52105</ObjectId>
       <ColNames>account_number</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="33" parent="19" name="account_pk">
-      <ObjectId>43586</ObjectId>
+      <ObjectId>52104</ObjectId>
       <ColNames>account_id</ColNames>
       <UnderlyingIndexName>account_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <key id="34" parent="19" name="account_account_number_key">
-      <ObjectId>43588</ObjectId>
+      <ObjectId>52106</ObjectId>
       <ColNames>account_number</ColNames>
       <UnderlyingIndexName>account_account_number_key</UnderlyingIndexName>
     </key>
     <foreign-key id="35" parent="19" name="account_fk0">
-      <ObjectId>43635</ObjectId>
+      <ObjectId>52157</ObjectId>
       <ColNames>account_client_id</ColNames>
-      <RefTableId>43566</RefTableId>
+      <RefTableId>52084</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>client</RefTableName>
       <RefKeyName>client_pk</RefKeyName>
@@ -167,7 +166,7 @@
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1702</StateNumber>
+      <StateNumber>2063</StateNumber>
       <SequenceName>check_check_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;check_check_id_seq&apos;::regclass)</DefaultExpression>
     </column>
@@ -175,274 +174,306 @@
       <Position>2</Position>
       <DataType>money|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1702</StateNumber>
+      <StateNumber>2063</StateNumber>
     </column>
     <column id="38" parent="20" name="check_time">
       <Position>3</Position>
       <DataType>timestamp with time zone|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1702</StateNumber>
+      <StateNumber>2063</StateNumber>
     </column>
     <column id="39" parent="20" name="check_type_operation_id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1702</StateNumber>
+      <StateNumber>2063</StateNumber>
     </column>
-    <index id="40" parent="20" name="check_pk">
-      <ObjectId>43595</ObjectId>
+    <column id="40" parent="20" name="check_request_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2063</StateNumber>
+    </column>
+    <index id="41" parent="20" name="check_pk">
+      <ObjectId>52113</ObjectId>
       <ColNames>check_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="41" parent="20" name="check_pk">
-      <ObjectId>43596</ObjectId>
+    <key id="42" parent="20" name="check_pk">
+      <ObjectId>52114</ObjectId>
       <ColNames>check_id</ColNames>
       <UnderlyingIndexName>check_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="42" parent="20" name="check_fk0">
-      <ObjectId>43640</ObjectId>
+    <foreign-key id="43" parent="20" name="check_fk0">
+      <ObjectId>52162</ObjectId>
       <ColNames>check_type_operation_id</ColNames>
-      <RefTableId>43607</RefTableId>
+      <RefTableId>52125</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>type_operation</RefTableName>
       <RefKeyName>type_operation_pk</RefKeyName>
       <RefColNames>type_operation_id</RefColNames>
     </foreign-key>
-    <column id="43" parent="21" name="client_id">
+    <foreign-key id="44" parent="20" name="check_fk1">
+      <ObjectId>52167</ObjectId>
+      <ColNames>check_request_id</ColNames>
+      <RefTableId>52117</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>request</RefTableName>
+      <RefKeyName>request_pk</RefKeyName>
+      <RefColNames>request_id</RefColNames>
+    </foreign-key>
+    <column id="45" parent="21" name="client_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1700</StateNumber>
+      <StateNumber>2061</StateNumber>
       <SequenceName>client_client_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;client_client_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="44" parent="21" name="client_name">
+    <column id="46" parent="21" name="client_name">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1700</StateNumber>
+      <StateNumber>2061</StateNumber>
     </column>
-    <column id="45" parent="21" name="client_password">
+    <column id="47" parent="21" name="client_password">
       <Position>3</Position>
-      <DataType>varchar(40)|0</DataType>
+      <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1700</StateNumber>
+      <StateNumber>2061</StateNumber>
     </column>
-    <column id="46" parent="21" name="client_email">
+    <column id="48" parent="21" name="client_email">
       <Position>4</Position>
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1700</StateNumber>
+      <StateNumber>2061</StateNumber>
     </column>
-    <index id="47" parent="21" name="client_pk">
-      <ObjectId>43573</ObjectId>
+    <column id="49" parent="21" name="client_is_admin">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2061</StateNumber>
+    </column>
+    <index id="50" parent="21" name="client_pk">
+      <ObjectId>52091</ObjectId>
       <ColNames>client_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="48" parent="21" name="client_client_name_key">
-      <ObjectId>43575</ObjectId>
+    <index id="51" parent="21" name="client_client_name_key">
+      <ObjectId>52093</ObjectId>
       <ColNames>client_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="49" parent="21" name="client_client_email_key">
-      <ObjectId>43577</ObjectId>
+    <index id="52" parent="21" name="client_client_email_key">
+      <ObjectId>52095</ObjectId>
       <ColNames>client_email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="50" parent="21" name="client_pk">
-      <ObjectId>43574</ObjectId>
+    <key id="53" parent="21" name="client_pk">
+      <ObjectId>52092</ObjectId>
       <ColNames>client_id</ColNames>
       <UnderlyingIndexName>client_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="51" parent="21" name="client_client_name_key">
-      <ObjectId>43576</ObjectId>
+    <key id="54" parent="21" name="client_client_name_key">
+      <ObjectId>52094</ObjectId>
       <ColNames>client_name</ColNames>
       <UnderlyingIndexName>client_client_name_key</UnderlyingIndexName>
     </key>
-    <key id="52" parent="21" name="client_client_email_key">
-      <ObjectId>43578</ObjectId>
+    <key id="55" parent="21" name="client_client_email_key">
+      <ObjectId>52096</ObjectId>
       <ColNames>client_email</ColNames>
       <UnderlyingIndexName>client_client_email_key</UnderlyingIndexName>
     </key>
-    <column id="53" parent="22" name="history_id">
+    <column id="56" parent="22" name="history_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1705</StateNumber>
+      <StateNumber>2066</StateNumber>
       <SequenceName>history_history_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;history_history_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="54" parent="22" name="history_type_operation_id">
+    <column id="57" parent="22" name="history_type_operation_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1705</StateNumber>
+      <StateNumber>2066</StateNumber>
     </column>
-    <column id="55" parent="22" name="history_account_id">
+    <column id="58" parent="22" name="history_account_id">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1705</StateNumber>
+      <StateNumber>2066</StateNumber>
     </column>
-    <column id="56" parent="22" name="history_money">
+    <column id="59" parent="22" name="history_money">
       <Position>4</Position>
       <DataType>money|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1705</StateNumber>
+      <StateNumber>2066</StateNumber>
     </column>
-    <column id="57" parent="22" name="history_time">
+    <column id="60" parent="22" name="history_time">
       <Position>5</Position>
       <DataType>timestamp with time zone|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1705</StateNumber>
+      <StateNumber>2066</StateNumber>
     </column>
-    <index id="58" parent="22" name="history_pk">
-      <ObjectId>43622</ObjectId>
+    <index id="61" parent="22" name="history_pk">
+      <ObjectId>52142</ObjectId>
       <ColNames>history_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="59" parent="22" name="history_pk">
-      <ObjectId>43623</ObjectId>
+    <key id="62" parent="22" name="history_pk">
+      <ObjectId>52143</ObjectId>
       <ColNames>history_id</ColNames>
       <UnderlyingIndexName>history_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="60" parent="22" name="history_fk0">
-      <ObjectId>43650</ObjectId>
+    <foreign-key id="63" parent="22" name="history_fk0">
+      <ObjectId>52172</ObjectId>
       <ColNames>history_type_operation_id</ColNames>
-      <RefTableId>43607</RefTableId>
+      <RefTableId>52125</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>type_operation</RefTableName>
       <RefKeyName>type_operation_pk</RefKeyName>
       <RefColNames>type_operation_id</RefColNames>
     </foreign-key>
-    <foreign-key id="61" parent="22" name="history_fk1">
-      <ObjectId>43655</ObjectId>
+    <foreign-key id="64" parent="22" name="history_fk1">
+      <ObjectId>52177</ObjectId>
       <ColNames>history_account_id</ColNames>
-      <RefTableId>43581</RefTableId>
+      <RefTableId>52099</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>account</RefTableName>
       <RefKeyName>account_pk</RefKeyName>
       <RefColNames>account_id</RefColNames>
     </foreign-key>
-    <column id="62" parent="23" name="request_id">
+    <column id="65" parent="23" name="request_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1703</StateNumber>
+      <StateNumber>2064</StateNumber>
       <SequenceName>request_request_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;request_request_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="63" parent="23" name="request_from_acc_number">
+    <column id="66" parent="23" name="request_from_acc_number">
       <Position>2</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1703</StateNumber>
+      <StateNumber>2064</StateNumber>
     </column>
-    <column id="64" parent="23" name="request_to_acc_number">
+    <column id="67" parent="23" name="request_to_acc_number">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1703</StateNumber>
+      <StateNumber>2064</StateNumber>
     </column>
-    <column id="65" parent="23" name="request_check_id">
+    <column id="68" parent="23" name="request_unique_number">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1703</StateNumber>
+      <StateNumber>2064</StateNumber>
     </column>
-    <index id="66" parent="23" name="request_pk">
-      <ObjectId>43603</ObjectId>
+    <index id="69" parent="23" name="request_pk">
+      <ObjectId>52121</ObjectId>
       <ColNames>request_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="67" parent="23" name="request_pk">
-      <ObjectId>43604</ObjectId>
+    <key id="70" parent="23" name="request_pk">
+      <ObjectId>52122</ObjectId>
       <ColNames>request_id</ColNames>
       <UnderlyingIndexName>request_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="68" parent="23" name="request_fk0">
-      <ObjectId>43645</ObjectId>
-      <ColNames>request_check_id</ColNames>
-      <RefTableId>43591</RefTableId>
+    <column id="71" parent="24" name="token_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2067</StateNumber>
+      <SequenceName>token_token_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;token_token_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="72" parent="24" name="token_token">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2067</StateNumber>
+    </column>
+    <column id="73" parent="24" name="token_status">
+      <Position>3</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2067</StateNumber>
+    </column>
+    <column id="74" parent="24" name="token_check_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2067</StateNumber>
+    </column>
+    <index id="75" parent="24" name="token_pk">
+      <ObjectId>52153</ObjectId>
+      <ColNames>token_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="76" parent="24" name="token_token_token_key">
+      <ObjectId>52155</ObjectId>
+      <ColNames>token_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="24" name="token_pk">
+      <ObjectId>52154</ObjectId>
+      <ColNames>token_id</ColNames>
+      <UnderlyingIndexName>token_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="78" parent="24" name="token_token_token_key">
+      <ObjectId>52156</ObjectId>
+      <ColNames>token_token</ColNames>
+      <UnderlyingIndexName>token_token_token_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="79" parent="24" name="token_fk0">
+      <ObjectId>52182</ObjectId>
+      <ColNames>token_check_id</ColNames>
+      <RefTableId>52109</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>check</RefTableName>
       <RefKeyName>check_pk</RefKeyName>
       <RefColNames>check_id</RefColNames>
     </foreign-key>
-    <column id="69" parent="24" name="type_operation_id">
+    <column id="80" parent="25" name="type_operation_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1704</StateNumber>
+      <StateNumber>2065</StateNumber>
       <SequenceName>type_operation_type_operation_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;type_operation_type_operation_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="70" parent="24" name="type_operation_value">
+    <column id="81" parent="25" name="type_operation_value">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1704</StateNumber>
+      <StateNumber>2065</StateNumber>
     </column>
-    <index id="71" parent="24" name="type_operation_pk">
-      <ObjectId>43614</ObjectId>
+    <index id="82" parent="25" name="type_operation_pk">
+      <ObjectId>52132</ObjectId>
       <ColNames>type_operation_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="72" parent="24" name="type_operation_pk">
-      <ObjectId>43615</ObjectId>
+    <index id="83" parent="25" name="type_operation_type_operation_value_key">
+      <ObjectId>52134</ObjectId>
+      <ColNames>type_operation_value</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="84" parent="25" name="type_operation_pk">
+      <ObjectId>52133</ObjectId>
       <ColNames>type_operation_id</ColNames>
       <UnderlyingIndexName>type_operation_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="73" parent="25" name="validate_id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1706</StateNumber>
-      <SequenceName>validate_validate_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;validate_validate_id_seq&apos;::regclass)</DefaultExpression>
-    </column>
-    <column id="74" parent="25" name="validate_token">
-      <Position>2</Position>
-      <DataType>varchar|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1706</StateNumber>
-    </column>
-    <column id="75" parent="25" name="validate_key">
-      <Position>3</Position>
-      <DataType>varchar|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1706</StateNumber>
-    </column>
-    <column id="76" parent="25" name="validate_check_id">
-      <Position>4</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1706</StateNumber>
-    </column>
-    <index id="77" parent="25" name="validate_pk">
-      <ObjectId>43633</ObjectId>
-      <ColNames>validate_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="78" parent="25" name="validate_pk">
-      <ObjectId>43634</ObjectId>
-      <ColNames>validate_id</ColNames>
-      <UnderlyingIndexName>validate_pk</UnderlyingIndexName>
-      <Primary>1</Primary>
+    <key id="85" parent="25" name="type_operation_type_operation_value_key">
+      <ObjectId>52135</ObjectId>
+      <ColNames>type_operation_value</ColNames>
+      <UnderlyingIndexName>type_operation_type_operation_value_key</UnderlyingIndexName>
     </key>
-    <foreign-key id="79" parent="25" name="validate_fk0">
-      <ObjectId>43660</ObjectId>
-      <ColNames>validate_check_id</ColNames>
-      <RefTableId>43591</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>check</RefTableName>
-      <RefKeyName>check_pk</RefKeyName>
-      <RefColNames>check_id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>

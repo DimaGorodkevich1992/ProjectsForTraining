@@ -1,8 +1,8 @@
 package by.gorodkevich.app.persistence.entity;
 
-import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "history")
@@ -20,7 +20,7 @@ public class HistoryEntity extends Common {
     @Column(name = "history_money")
     private Double money;
     @Column(name = "history_time")
-    private DateTime dateTime;
+    private OffsetDateTime dateTime;
 
     @Override
     public int getId() {
@@ -56,11 +56,11 @@ public class HistoryEntity extends Common {
         this.money = money;
     }
 
-    public DateTime getDateTime() {
+    public OffsetDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(DateTime dateTime) {
+    public void setDateTime(OffsetDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
