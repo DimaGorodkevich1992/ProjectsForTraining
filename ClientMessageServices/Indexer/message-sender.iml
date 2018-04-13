@@ -3,10 +3,10 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../sender/target/classes" />
     <output-test url="file://$MODULE_DIR$/../sender/target/test-classes" />
-    <content url="file://$MODULE_DIR$/../sender">
-      <sourceFolder url="file://$MODULE_DIR$/../sender/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../sender/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../sender/src/test/java" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../message-sender">
+      <sourceFolder url="file://$MODULE_DIR$/../message-sender/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../message-sender/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../message-sender/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../sender/target" />
     </content>
     <orderEntry type="inheritedJdk" />

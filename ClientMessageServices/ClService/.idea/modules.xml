@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ClService.iml" filepath="$PROJECT_DIR$/ClService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Indexer/HelloWorld.iml" filepath="$PROJECT_DIR$/../Indexer/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Indexer/Indexer.iml" filepath="$PROJECT_DIR$/../Indexer/Indexer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../clserviceindexermodel/client-service-core.iml" filepath="$PROJECT_DIR$/../clserviceindexermodel/client-service-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../client-service-core/client-service-core.iml" filepath="$PROJECT_DIR$/../client-service-core/client-service-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Indexer/message-sender.iml" filepath="$PROJECT_DIR$/../Indexer/message-sender.iml" />
     </modules>
   </component>
 </project>
