@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClService.iml" filepath="$PROJECT_DIR$/ClService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Indexer/HelloWorld.iml" filepath="$PROJECT_DIR$/../Indexer/HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Indexer/Indexer.iml" filepath="$PROJECT_DIR$/../Indexer/Indexer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../clserviceindexermodel/client-service-core.iml" filepath="$PROJECT_DIR$/../clserviceindexermodel/client-service-core.iml" />
+    </modules>
+  </component>
+</project>
