@@ -1,0 +1,18 @@
+package by.gorodkevich.models;
+
+public class ClientStoreStoreRequestWithId extends ClientStoreRequest {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ClientStoreStoreRequestWithId[id=%s;]", id);
+    }
+}
