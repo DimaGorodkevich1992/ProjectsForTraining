@@ -1,0 +1,10 @@
+jms\config\jackson\LocalDateTimeDeserializer.class
+jms\config\jackson\JacksonOmbjectMapper.class
+jms\services\MessageSender.class
+jms\config\queue\QueueServiceConfig.class
+jms\services\MessageSender$1.class
+jms\config\queue\QueueConfig.class
+jms\services\Sender.class
+jms\services\MessageSender$2.class
+jms\config\jackson\LocalDateTimeSerializer.class
+jms\config\queue\QueueServiceConfigImpl.class
